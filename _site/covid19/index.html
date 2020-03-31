@@ -1,0 +1,1864 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.19.1 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Coronavirus in the United States - Data Science Portfolio</title>
+<meta name="description" content="Data Science, Random Forest ">
+
+
+  <meta name="author" content="Luke Gruszka">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Data Science Portfolio">
+<meta property="og:title" content="Coronavirus in the United States">
+<meta property="og:url" content="http://localhost:4000/covid19/">
+
+
+  <meta property="og:description" content="Data Science, Random Forest ">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/image/coronavirus.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2020-03-30T00:00:00-05:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/covid19/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Luke Gruszka",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Data Science Portfolio Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Data Science Portfolio
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/datascience/">Data Science</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero"
+  style=" background-image: url('');"
+>
+  
+    <img src="/image/coronavirus.jpg" alt="Coronavirus in the United States" class="page__hero-image">
+  
+  
+</div>
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/images/profilepic.jpeg" alt="Luke Gruszka" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Luke Gruszka</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Yeah I do data science sometimes</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">The Cloud</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+            <li><a href="https://twitter.com/zyphrnetics" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/sudozyphr" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:zyphrnetics@gmail.com">
+            <meta itemprop="email" content="zyphrnetics@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Coronavirus in the United States">
+    <meta itemprop="description" content="Data Science, Random Forest">
+    <meta itemprop="datePublished" content="2020-03-30T00:00:00-05:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Coronavirus in the United States
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  9 minute read
+
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>Today we are faced with a virus that is rapidly spreading and affecting everyone across the world. While the world governments are taking action and implementing safety procedures; we still see that the virus is spreading. This draws the questions if these actions are preventing the spread or simply just stalling the spread. The data being collected will give me the option to be able to see when the virus will be predicted to end and if the safety measurements being taken are actually slowing down the spread for the virus. By using linear regression I will be able to map out the trajectory of the virus. Also, I will be able to use a time series to map out when certain safety precautions have been taken and what effects those actions have on the virus outbreak.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">confusion_matrix</span>
+</code></pre></div></div>
+
+<p>Importing two datasets that were located in Kaggles Week 1 competition for Coronavirus.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">testData</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'test.csv'</span><span class="p">)</span>
+<span class="n">trainData</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'train.csv'</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">display</span><span class="p">(</span><span class="n">trainData</span><span class="o">.</span><span class="n">tail</span><span class="p">())</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Id</th>
+      <th>Province/State</th>
+      <th>Country/Region</th>
+      <th>Lat</th>
+      <th>Long</th>
+      <th>Date</th>
+      <th>ConfirmedCases</th>
+      <th>Fatalities</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>17887</th>
+      <td>26378</td>
+      <td>NaN</td>
+      <td>Zambia</td>
+      <td>-15.4167</td>
+      <td>28.2833</td>
+      <td>2020-03-20</td>
+      <td>2.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>17888</th>
+      <td>26379</td>
+      <td>NaN</td>
+      <td>Zambia</td>
+      <td>-15.4167</td>
+      <td>28.2833</td>
+      <td>2020-03-21</td>
+      <td>2.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>17889</th>
+      <td>26380</td>
+      <td>NaN</td>
+      <td>Zambia</td>
+      <td>-15.4167</td>
+      <td>28.2833</td>
+      <td>2020-03-22</td>
+      <td>3.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>17890</th>
+      <td>26381</td>
+      <td>NaN</td>
+      <td>Zambia</td>
+      <td>-15.4167</td>
+      <td>28.2833</td>
+      <td>2020-03-23</td>
+      <td>3.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>17891</th>
+      <td>26382</td>
+      <td>NaN</td>
+      <td>Zambia</td>
+      <td>-15.4167</td>
+      <td>28.2833</td>
+      <td>2020-03-24</td>
+      <td>3.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">display</span><span class="p">(</span><span class="n">testData</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ForecastId</th>
+      <th>Province/State</th>
+      <th>Country/Region</th>
+      <th>Lat</th>
+      <th>Long</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>NaN</td>
+      <td>Afghanistan</td>
+      <td>33.0</td>
+      <td>65.0</td>
+      <td>2020-03-12</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>NaN</td>
+      <td>Afghanistan</td>
+      <td>33.0</td>
+      <td>65.0</td>
+      <td>2020-03-13</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>NaN</td>
+      <td>Afghanistan</td>
+      <td>33.0</td>
+      <td>65.0</td>
+      <td>2020-03-14</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>NaN</td>
+      <td>Afghanistan</td>
+      <td>33.0</td>
+      <td>65.0</td>
+      <td>2020-03-15</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>NaN</td>
+      <td>Afghanistan</td>
+      <td>33.0</td>
+      <td>65.0</td>
+      <td>2020-03-16</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Data Grooming</p>
+
+<p>In order to make some observations I need to format the data to be useable and integers for graphing.
+The date field will be transformated into an integer by removing all symbols and setting the type as an int.
+Alos, I will remove the NAN’s from the training set as those will provide no value.
+At the same time I will drop the Province/State column as I want to focus on the Country as a whole and not just individual states.</p>
+
+<p>For the test data I want to make sure that I have the same primary key so I will use the date field and simply perform the same tranformation as I did to the training dataset.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Format date
+</span><span class="n">trainData</span><span class="p">[</span><span class="s">"Date"</span><span class="p">]</span> <span class="o">=</span> <span class="n">trainData</span><span class="p">[</span><span class="s">"Date"</span><span class="p">]</span><span class="o">.</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">"-"</span><span class="p">,</span><span class="s">""</span><span class="p">))</span>
+<span class="n">trainData</span><span class="p">[</span><span class="s">"Date"</span><span class="p">]</span>  <span class="o">=</span> <span class="n">trainData</span><span class="p">[</span><span class="s">"Date"</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="n">testData</span><span class="p">[</span><span class="s">"Date"</span><span class="p">]</span> <span class="o">=</span> <span class="n">testData</span><span class="p">[</span><span class="s">"Date"</span><span class="p">]</span><span class="o">.</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">"-"</span><span class="p">,</span><span class="s">""</span><span class="p">))</span>
+<span class="n">testData</span><span class="p">[</span><span class="s">"Date"</span><span class="p">]</span>  <span class="o">=</span> <span class="n">testData</span><span class="p">[</span><span class="s">"Date"</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># drop nan's
+</span><span class="n">trainData</span> <span class="o">=</span> <span class="n">trainData</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s">'Province/State'</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">trainData</span> <span class="o">=</span> <span class="n">trainData</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">trainData</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="nb">sum</span><span class="p">()</span>
+
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Id                0
+Country/Region    0
+Lat               0
+Long              0
+Date              0
+ConfirmedCases    0
+Fatalities        0
+dtype: int64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">testData</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="nb">sum</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ForecastId           0
+Province/State    6622
+Country/Region       0
+Lat                  0
+Long                 0
+Date                 0
+dtype: int64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">trainData</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Id                17892
+Country/Region      163
+Lat                 272
+Long                276
+Date                 63
+ConfirmedCases     1023
+Fatalities          204
+dtype: int64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">testData</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ForecastId        12212
+Province/State      128
+Country/Region      163
+Lat                 272
+Long                276
+Date                 43
+dtype: int64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">confirmed_total_date</span> <span class="o">=</span> <span class="n">trainData</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s">'Date'</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s">'ConfirmedCases'</span><span class="p">:[</span><span class="s">'sum'</span><span class="p">]})</span>
+<span class="n">fatalities_total_date</span> <span class="o">=</span> <span class="n">trainData</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s">'Date'</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s">'Fatalities'</span><span class="p">:[</span><span class="s">'sum'</span><span class="p">]})</span>
+<span class="n">total_date</span> <span class="o">=</span> <span class="n">confirmed_total_date</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">fatalities_total_date</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">total_date</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">"Global confirmed cases"</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">"Number of cases"</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">"Date"</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">fatalities_total_date</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'orange'</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">"Global deceased cases"</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">"Number of cases"</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">"Date"</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Text(0.5, 0, 'Date')
+</code></pre></div></div>
+
+<p><img src="output_13_1.png" alt="png" /></p>
+
+<h3 id="observation">Observation:</h3>
+
+<p>The only concern that transparent here is that initially the graph starts out on a straight unaffected line. This could be due to the fact that in the wake of the new virus the health care industry was unsure of the true classification of the virus. This in turn will result is false readings and overlooked cases.</p>
+
+<h3 id="action">Action:</h3>
+
+<p>When I focus my efforts on the United States I will start the data when the virus was recognized as an issue.</p>
+
+<h3 id="issues">Issues:</h3>
+
+<p>Some issues that I see that could be affecting the graph would be the availability of the tests for the COVID-19 virus. Looking at the confirmed cases we can notice that the graph expotentionally grew around the same time that the tests were distrubuted to the affected areas. This could affect the model.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s">'ggplot'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">confirmed_total_date</span><span class="p">,</span> <span class="n">fatalities_total_date</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="output_20_0.png" alt="png" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">spearmanr</span><span class="p">(</span><span class="n">confirmed_total_date</span><span class="p">,</span> <span class="n">fatalities_total_date</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1.0
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">kendalltau</span><span class="p">(</span><span class="n">confirmed_total_date</span><span class="p">,</span> <span class="n">fatalities_total_date</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.9999999999999999
+</code></pre></div></div>
+
+<h1 id="united-states-analysis">United States Analysis</h1>
+
+<p>I want to indentify all of the United States data in the datasets to indentify a cleaner look. Once the Corona Virus became transparent in the United States there were tests available to test and identify for the virus. I anticipate that this analysis will differ from the rest of the world, graph above, as the graph will not include China. China’s influence in the data showed a delay in progression against the virus when it comes to tests and indentification protrayed by the spikes in the data.</p>
+
+<p>When the data came to the United States I expect for it to start out slow then begin to grow exponetionally as more tests will be aviable towards the beginning of the outbreak. China was unaware of the virus at firt with allowed for the virus to spread. As the United States looking in, they should be able to catch the virus early on and take measures early on to prevent a wide spread disease.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">unitedStates</span> <span class="o">=</span><span class="n">trainData</span><span class="p">[</span><span class="n">trainData</span><span class="p">[</span><span class="s">'Country/Region'</span><span class="p">]</span><span class="o">==</span><span class="s">'US'</span><span class="p">]</span>
+<span class="n">unitedStates</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Id</th>
+      <th>Lat</th>
+      <th>Long</th>
+      <th>Date</th>
+      <th>ConfirmedCases</th>
+      <th>Fatalities</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>3654.000000</td>
+      <td>3654.000000</td>
+      <td>3654.000000</td>
+      <td>3.654000e+03</td>
+      <td>3654.000000</td>
+      <td>3654.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>22584.500000</td>
+      <td>37.771567</td>
+      <td>-84.323891</td>
+      <td>2.020024e+07</td>
+      <td>60.047072</td>
+      <td>0.813355</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>1557.201509</td>
+      <td>8.018508</td>
+      <td>46.996733</td>
+      <td>6.621358e+01</td>
+      <td>681.297097</td>
+      <td>7.030237</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>19903.000000</td>
+      <td>13.444300</td>
+      <td>-157.498300</td>
+      <td>2.020012e+07</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>21236.250000</td>
+      <td>34.969700</td>
+      <td>-99.784000</td>
+      <td>2.020021e+07</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>22584.500000</td>
+      <td>38.978600</td>
+      <td>-87.944200</td>
+      <td>2.020022e+07</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>23932.750000</td>
+      <td>42.230200</td>
+      <td>-76.802100</td>
+      <td>2.020031e+07</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>25266.000000</td>
+      <td>61.370700</td>
+      <td>144.793700</td>
+      <td>2.020032e+07</td>
+      <td>25681.000000</td>
+      <td>210.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">confirmed_total_date_US</span> <span class="o">=</span> <span class="n">unitedStates</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s">'Date'</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s">'ConfirmedCases'</span><span class="p">:[</span><span class="s">'sum'</span><span class="p">]})</span>
+<span class="n">fatalities_total_date_US</span> <span class="o">=</span> <span class="n">unitedStates</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s">'Date'</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s">'Fatalities'</span><span class="p">:[</span><span class="s">'sum'</span><span class="p">]})</span>
+<span class="n">total_date_US</span> <span class="o">=</span> <span class="n">confirmed_total_date_US</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">fatalities_total_date_US</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">total_date_US</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">"Global confirmed cases"</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">"Number of cases"</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">"Date"</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">fatalities_total_date_US</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'orange'</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">"Global deceased cases"</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">"Number of cases"</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">"Date"</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Text(0.5, 0, 'Date')
+</code></pre></div></div>
+
+<p><img src="output_26_1.png" alt="png" /></p>
+
+<h2 id="analysis">Analysis</h2>
+
+<p>Taken from the same timeline we see that there was some time where the virus was not reported in the United States. But once the virus was reported we can see that the cases exploded.</p>
+
+<p>The United States was aware of the virus as it originated in China. On Jan 21 2020 the United States had it first case of the virus. Then a month later Feb 26, 2020 the United States had it first suspected local transmission. Then a short three days later the United States had reported it first COVID-19 related death.</p>
+
+<p>Looking at the graph above we notice that around early March there is a spike in the data. We are able to see that the graph started to grow. This is because on March 3, 2020 the CDC lifts restrictions for virus testing. This means that people will close contact with people diagnosed for COVID-19 or people will severe symptoms could get tested.</p>
+
+<p>This, much like what had happened in China, availability in tests to the general public made it clear that the virus had already spread across the population. Once the testing was presented to the United States and people began to take the tests the volume of the virus came into light. Through the month of march the number of cases grew at an alarming rate because of the availibility of the tests gave us a clearer picture.</p>
+
+<p>I expect this number to keep on growing as a result that tests are not accessible to everyone. Once there is enough tests to completely test everyone who are concerned with having the virus I expect the data to reflect a stead growth in cases and deaths.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s">'ggplot'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">confirmed_total_date_US</span><span class="p">,</span> <span class="n">fatalities_total_date_US</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="output_29_0.png" alt="png" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">spearmanr</span><span class="p">(</span><span class="n">confirmed_total_date_US</span><span class="p">,</span> <span class="n">fatalities_total_date_US</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.8073991628275585
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">kendalltau</span><span class="p">(</span><span class="n">confirmed_total_date_US</span><span class="p">,</span> <span class="n">fatalities_total_date_US</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.7657375167529012
+</code></pre></div></div>
+
+<h3 id="correlation">Correlation</h3>
+
+<p>There is a correlation between the cofirmed number of cases and fatalities in the United States. Even though the number are not similar, they follow a similar pattern and if the number of cases grow so with the number of deaths.</p>
+
+<h1 id="random-forest-classification-model">Random Forest Classification Model</h1>
+
+<p>The random forest classfication model is an ensemble tree-based learning algorithm. The method is to randomly select subset of training sets and it will aggregate the votes from different decicion trees. This will allow the model to predict the final class of the test object.</p>
+
+<p>The algorithm is stable and will not move or produce significantly different results if a new data set is introduced. The algorithm also does not have any bias. The algorithm can handle missing values and unscaled data points but for this project I have removed those concerns as it should lead to a better result.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="n">Tree_model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">total_date_US</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th>ConfirmedCases</th>
+      <th>Fatalities</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>sum</th>
+      <th>sum</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>20200122</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>20200123</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>20200124</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>20200125</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>20200126</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>20200320</th>
+      <td>18967.0</td>
+      <td>241.0</td>
+    </tr>
+    <tr>
+      <th>20200321</th>
+      <td>25347.0</td>
+      <td>302.0</td>
+    </tr>
+    <tr>
+      <th>20200322</th>
+      <td>33083.0</td>
+      <td>413.0</td>
+    </tr>
+    <tr>
+      <th>20200323</th>
+      <td>43442.0</td>
+      <td>547.0</td>
+    </tr>
+    <tr>
+      <th>20200324</th>
+      <td>53490.0</td>
+      <td>698.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>63 rows × 2 columns</p>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">train_unitedStates</span><span class="o">=</span><span class="n">unitedStates</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s">'Country/Region'</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">trainData_US</span><span class="o">=</span><span class="n">train_unitedStates</span><span class="p">[[</span><span class="s">'Lat'</span><span class="p">,</span><span class="s">'Long'</span><span class="p">,</span><span class="s">'Date'</span><span class="p">]]</span>
+<span class="n">trainData_US</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Lat</th>
+      <th>Long</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>13482</th>
+      <td>32.3182</td>
+      <td>-86.9023</td>
+      <td>20200122</td>
+    </tr>
+    <tr>
+      <th>13483</th>
+      <td>32.3182</td>
+      <td>-86.9023</td>
+      <td>20200123</td>
+    </tr>
+    <tr>
+      <th>13484</th>
+      <td>32.3182</td>
+      <td>-86.9023</td>
+      <td>20200124</td>
+    </tr>
+    <tr>
+      <th>13485</th>
+      <td>32.3182</td>
+      <td>-86.9023</td>
+      <td>20200125</td>
+    </tr>
+    <tr>
+      <th>13486</th>
+      <td>32.3182</td>
+      <td>-86.9023</td>
+      <td>20200126</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>17131</th>
+      <td>42.7560</td>
+      <td>-107.3025</td>
+      <td>20200320</td>
+    </tr>
+    <tr>
+      <th>17132</th>
+      <td>42.7560</td>
+      <td>-107.3025</td>
+      <td>20200321</td>
+    </tr>
+    <tr>
+      <th>17133</th>
+      <td>42.7560</td>
+      <td>-107.3025</td>
+      <td>20200322</td>
+    </tr>
+    <tr>
+      <th>17134</th>
+      <td>42.7560</td>
+      <td>-107.3025</td>
+      <td>20200323</td>
+    </tr>
+    <tr>
+      <th>17135</th>
+      <td>42.7560</td>
+      <td>-107.3025</td>
+      <td>20200324</td>
+    </tr>
+  </tbody>
+</table>
+<p>3654 rows × 3 columns</p>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">train_unitedStates</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s">'unitedstatesdata.csv'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">test_unitedStates</span> <span class="o">=</span><span class="n">testData</span><span class="p">[</span><span class="n">testData</span><span class="p">[</span><span class="s">'Country/Region'</span><span class="p">]</span><span class="o">==</span><span class="s">'US'</span><span class="p">]</span>
+<span class="n">test_unitedStates</span><span class="o">=</span><span class="n">test_unitedStates</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s">'Country/Region'</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">testData_US</span> <span class="o">=</span> <span class="n">test_unitedStates</span><span class="p">[[</span><span class="s">'Lat'</span><span class="p">,</span><span class="s">'Long'</span><span class="p">,</span><span class="s">'Date'</span><span class="p">]]</span>
+<span class="n">testData_US</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Lat</th>
+      <th>Long</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>9202</th>
+      <td>32.3182</td>
+      <td>-86.9023</td>
+      <td>20200312</td>
+    </tr>
+    <tr>
+      <th>9203</th>
+      <td>32.3182</td>
+      <td>-86.9023</td>
+      <td>20200313</td>
+    </tr>
+    <tr>
+      <th>9204</th>
+      <td>32.3182</td>
+      <td>-86.9023</td>
+      <td>20200314</td>
+    </tr>
+    <tr>
+      <th>9205</th>
+      <td>32.3182</td>
+      <td>-86.9023</td>
+      <td>20200315</td>
+    </tr>
+    <tr>
+      <th>9206</th>
+      <td>32.3182</td>
+      <td>-86.9023</td>
+      <td>20200316</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>11691</th>
+      <td>42.7560</td>
+      <td>-107.3025</td>
+      <td>20200419</td>
+    </tr>
+    <tr>
+      <th>11692</th>
+      <td>42.7560</td>
+      <td>-107.3025</td>
+      <td>20200420</td>
+    </tr>
+    <tr>
+      <th>11693</th>
+      <td>42.7560</td>
+      <td>-107.3025</td>
+      <td>20200421</td>
+    </tr>
+    <tr>
+      <th>11694</th>
+      <td>42.7560</td>
+      <td>-107.3025</td>
+      <td>20200422</td>
+    </tr>
+    <tr>
+      <th>11695</th>
+      <td>42.7560</td>
+      <td>-107.3025</td>
+      <td>20200423</td>
+    </tr>
+  </tbody>
+</table>
+<p>2494 rows × 3 columns</p>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">testData_US</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Lat</th>
+      <th>Long</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>11691</th>
+      <td>42.756</td>
+      <td>-107.3025</td>
+      <td>20200419</td>
+    </tr>
+    <tr>
+      <th>11692</th>
+      <td>42.756</td>
+      <td>-107.3025</td>
+      <td>20200420</td>
+    </tr>
+    <tr>
+      <th>11693</th>
+      <td>42.756</td>
+      <td>-107.3025</td>
+      <td>20200421</td>
+    </tr>
+    <tr>
+      <th>11694</th>
+      <td>42.756</td>
+      <td>-107.3025</td>
+      <td>20200422</td>
+    </tr>
+    <tr>
+      <th>11695</th>
+      <td>42.756</td>
+      <td>-107.3025</td>
+      <td>20200423</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">train_unitedStates_Confirmed</span><span class="o">=</span><span class="n">train_unitedStates</span><span class="p">[[</span><span class="s">'ConfirmedCases'</span><span class="p">]]</span>
+<span class="n">train_unitedStates_Confirmed</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ConfirmedCases</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>3654.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>60.047072</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>681.297097</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>25681.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">train_unitedStates_Fatalities</span><span class="o">=</span><span class="n">train_unitedStates</span><span class="p">[[</span><span class="s">'Fatalities'</span><span class="p">]]</span>
+<span class="n">train_unitedStates_Fatalities</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Fatalities</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>3654.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>0.813355</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>7.030237</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>210.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">trainData_US</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">train_unitedStates_Confirmed</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">train_unitedStates_Fatalities</span>
+<span class="n">x_test</span> <span class="o">=</span> <span class="n">testData_US</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Tree_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">)</span>
+<span class="n">predConfirmed</span> <span class="o">=</span> <span class="n">Tree_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+<span class="n">predConfirmed</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">predConfirmed</span><span class="p">)</span>
+<span class="n">predConfirmed</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s">"ConfirmedCases_prediction"</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/opt/conda/lib/python3.7/site-packages/ipykernel_launcher.py:1: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  """Entry point for launching an IPython kernel.
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">predConfirmed</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ConfirmedCases_prediction</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2489</th>
+      <td>29.0</td>
+    </tr>
+    <tr>
+      <th>2490</th>
+      <td>29.0</td>
+    </tr>
+    <tr>
+      <th>2491</th>
+      <td>29.0</td>
+    </tr>
+    <tr>
+      <th>2492</th>
+      <td>29.0</td>
+    </tr>
+    <tr>
+      <th>2493</th>
+      <td>29.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>2494 rows × 1 columns</p>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Tree_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">)</span>
+<span class="n">predFatalities</span> <span class="o">=</span> <span class="n">Tree_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+<span class="n">predFatalities</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">predFatalities</span><span class="p">)</span>
+<span class="n">predFatalities</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Fatalities_prediction"</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/opt/conda/lib/python3.7/site-packages/ipykernel_launcher.py:1: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  """Entry point for launching an IPython kernel.
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">predFatalities</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Fatalities_prediction</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2489</th>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2490</th>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2491</th>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2492</th>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2493</th>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>2494 rows × 1 columns</p>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">predictions</span> <span class="o">=</span> <span class="n">predConfirmed</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">predFatalities</span><span class="p">)</span>
+<span class="n">predictions</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ConfirmedCases_prediction</th>
+      <th>Fatalities_prediction</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>6.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>12.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>12.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2489</th>
+      <td>29.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2490</th>
+      <td>29.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2491</th>
+      <td>29.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2492</th>
+      <td>29.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2493</th>
+      <td>29.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>2494 rows × 2 columns</p>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">predictions</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">"US confirmed cases"</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">"Number of cases"</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">"Date"</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">predFatalities</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'orange'</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">"US deceased cases"</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">"Number of cases"</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">"Date"</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Text(0.5, 0, 'Date')
+</code></pre></div></div>
+
+<p><img src="output_50_1.png" alt="png" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">predictions</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ConfirmedCases_prediction</th>
+      <th>Fatalities_prediction</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>2494.000000</td>
+      <td>2494.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>690.180834</td>
+      <td>8.576183</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>2943.759642</td>
+      <td>27.336496</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>30.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>105.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>368.000000</td>
+      <td>6.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>25681.000000</td>
+      <td>210.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s">'ggplot'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">predConfirmed</span><span class="p">,</span> <span class="n">predFatalities</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="output_52_0.png" alt="png" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">spearmanr</span><span class="p">(</span><span class="n">predConfirmed</span><span class="p">,</span> <span class="n">predFatalities</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.8056651838655811
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">kendalltau</span><span class="p">(</span><span class="n">predConfirmed</span><span class="p">,</span> <span class="n">predFatalities</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.6666551009677553
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">confirmedCasesPrint</span> <span class="o">=</span> <span class="n">predictions</span><span class="o">.</span><span class="nb">sum</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">fatalititiesPrint</span> <span class="o">=</span> <span class="n">predictions</span><span class="o">.</span><span class="nb">sum</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">'By 4/23/2020 the below predictions were made: '</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'{} more people in the US will contract the disease.'</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">confirmedCasesPrint</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'As a result I predict that {} people will expire.'</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">fatalititiesPrint</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>By 4/23/2020 the below predictions were made:
+1721311.0 more people in the US will contract the disease.
+As a result I predict that 21389.0 people will expire.
+</code></pre></div></div>
+
+<p>Resources:</p>
+
+<ol>
+  <li>https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/summary.html</li>
+  <li>https://ourworldindata.org/coronavirus</li>
+  <li>https://www.who.int/emergencies/diseases/novel-coronavirus-2019</li>
+  <li>https://www.worldometers.info/coronavirus/</li>
+  <li>https://informationisbeautiful.net/visualizations/covid-19-coronavirus-infographic-datapack/</li>
+  <li>https://www.ecdc.europa.eu/en/publications-data/rapid-risk-assessment-novel-coronavirus-
+disease-2019-covid-19-pandemic-increased</li>
+  <li>https://www.barrons.com/articles/latest-coronavirus-data-show-disease-continues-to-spread-even-in- the-u-s-51584224660</li>
+  <li>https://www.theguardian.com/world/2020/mar/13/coronavirus-pandemic-visualising-the-global-crisis</li>
+  <li>https://ourworldindata.org/coronavirus-source-data
+10.https://www.kaggle.com/sudalairajkumar/novel-corona-virus-2019-dataset</li>
+</ol>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#data-science" class="page__taxonomy-item" rel="tag">data science</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#prediction" class="page__taxonomy-item" rel="tag">prediction</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#random-forest" class="page__taxonomy-item" rel="tag">random forest</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-03-30T00:00:00-05:00">March 30, 2020</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Coronavirus+in+the+United+States%20http%3A%2F%2Flocalhost%3A4000%2Fcovid19%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fcovid19%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fcovid19%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/PySparkExample/" class="pagination--pager" title="PySpark in Practice
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/PySparkExample/" rel="permalink">PySpark in Practice
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Data Science, pyspark
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 Luke Gruszka. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
