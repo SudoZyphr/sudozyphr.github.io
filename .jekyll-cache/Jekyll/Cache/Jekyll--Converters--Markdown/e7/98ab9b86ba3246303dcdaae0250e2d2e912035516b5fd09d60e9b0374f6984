@@ -1,0 +1,84 @@
+I"ù<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">SparkSession</span>
+<span class="n">spark</span> <span class="o">=</span> <span class="n">SparkSession</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">master</span><span class="p">(</span><span class="s">"local"</span><span class="p">)</span><span class="o">.</span><span class="n">appName</span><span class="p">(</span><span class="s">"Luke HW"</span><span class="p">)</span>\
+    <span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="s">"spark.some.config.option"</span><span class="p">,</span> <span class="s">"some-value"</span><span class="p">)</span>\
+    <span class="o">.</span><span class="n">getOrCreate</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s">"header"</span><span class="p">,</span> <span class="s">"true"</span><span class="p">)</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="s">"baby-names.csv"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['state', 'sex', 'year', 'name', 'count']
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-----+---+----+---------+-----+
+|state|sex|year|     name|count|
++-----+---+----+---------+-----+
+|   AK|  F|1910|     Mary|   14|
+|   AK|  F|1910|    Annie|   12|
+|   AK|  F|1910|     Anna|   10|
+|   AK|  F|1910| Margaret|    8|
+|   AK|  F|1910|    Helen|    7|
+|   AK|  F|1910|    Elsie|    6|
+|   AK|  F|1910|     Lucy|    6|
+|   AK|  F|1910|  Dorothy|    5|
+|   AK|  F|1911|     Mary|   12|
+|   AK|  F|1911| Margaret|    7|
+|   AK|  F|1911|     Ruth|    7|
+|   AK|  F|1911|    Annie|    6|
+|   AK|  F|1911|Elizabeth|    6|
+|   AK|  F|1911|    Helen|    6|
+|   AK|  F|1912|     Mary|    9|
+|   AK|  F|1912|    Elsie|    8|
+|   AK|  F|1912|    Agnes|    7|
+|   AK|  F|1912|     Anna|    7|
+|   AK|  F|1912|    Helen|    7|
+|   AK|  F|1912|   Louise|    7|
++-----+---+----+---------+-----+
+only showing top 20 rows
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>5933561
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dfJohn</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="nb">filter</span><span class="p">((</span><span class="n">df</span><span class="o">.</span><span class="n">name</span><span class="o">==</span><span class="s">"John"</span><span class="p">))</span>
+<span class="n">dfJohn</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>7018
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dfSex</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="nb">filter</span><span class="p">((</span><span class="n">df</span><span class="o">.</span><span class="n">sex</span><span class="o">==</span><span class="s">"M"</span><span class="p">))</span>
+<span class="n">dfSexState</span> <span class="o">=</span> <span class="n">dfSex</span><span class="o">.</span><span class="nb">filter</span><span class="p">((</span><span class="n">dfSex</span><span class="o">.</span><span class="n">state</span><span class="o">==</span><span class="s">"NE"</span><span class="p">))</span>
+<span class="n">dfSexStateYear</span> <span class="o">=</span> <span class="n">dfSexState</span><span class="o">.</span><span class="nb">filter</span><span class="p">((</span><span class="n">dfSexState</span><span class="o">.</span><span class="n">year</span><span class="o">==</span><span class="s">"1980"</span><span class="p">))</span>
+<span class="n">dfSexStateYear</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-----+---+----+-----------+-----+
+|state|sex|year|       name|count|
++-----+---+----+-----------+-----+
+|   NE|  M|1980|    Matthew|  434|
+|   NE|  M|1980|    Michael|  426|
+|   NE|  M|1980|      Jason|  409|
+|   NE|  M|1980|     Joshua|  366|
+|   NE|  M|1980|Christopher|  359|
+|   NE|  M|1980|     Justin|  337|
+|   NE|  M|1980|       Ryan|  320|
+|   NE|  M|1980|      David|  292|
+|   NE|  M|1980|     Andrew|  281|
+|   NE|  M|1980|      Brian|  278|
++-----+---+----+-----------+-----+
+only showing top 10 rows
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+:ET
