@@ -117,6 +117,9 @@ author:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
+    - label: "LinkedIn"
+      icon: "fas fa-fw fa-link"
+      url: "linkedin.com/in/luke-gruszka-csm-83a59210a "
 
 # Site Footer
 footer:
