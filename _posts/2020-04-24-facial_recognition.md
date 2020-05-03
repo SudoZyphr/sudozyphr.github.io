@@ -23,7 +23,7 @@ for x in {1..50}; do imagesnap -w 2 dataset/User.1.$x.jpg; done
 This is where I am adding in my dataset. This is a picture of myself to be able to help the model identify who I am. I will take 50 pictures and label them as User.1.
 
 By doing this I will create a dataset folder that I can use to train my model and be able to get a high percentage of probability that I am in a video.
-![Images for Facial Recognition](images/cnn/faceexample.jpg)
+![Images for Facial Recognition](/images/cnn/faceexample.jpg)
 
 
 
@@ -70,12 +70,12 @@ gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 ```
 
-![Images for Facial Recognition](images/cnn/facewithrectangle.png)
+![Images for Facial Recognition](/images/cnn/facewithrectangle.png)
 
 In my second step this is where I have found two different methods have worked. The first step is to simply use the algorithm in the LBPH Face Recognizer. The OpenCV library has three different processes for facial recognition but this one appears to be the best for this use case. The method works by taking a 3 x 3 window across the entire picture to help identify and classify each pixel. This will then assign an intensity value that is either less or equal to the center pixel by 1 and the rest by 0. So as this method progresses it is going to find a binary pattern that will be able to assign to that picture. This does not require blue, red, green formats which is why we changed it to grayscale above. The images will then be able to create a histogram using the frequency diagram. In my project there are two people being identified so there should be 2 histograms after training in the process.
 
 Now I was ready to feed my data and binary pattern into the model. After training the model I quickly became aware of the results. The recognizer was no better than a flip of a coin. The accuracy was 50 to 60 percent. This was not going to be good enough for facial recognition.
-![Images for Facial Recognition](images/cnn/bad.png)
+![Images for Facial Recognition](/images/cnn/bad.png)
 
 My second attempt I looked at using the library keras. The model type that I found to be the best way Sequential. It will take a layer approach to the problem allowing for modification. The first two layers that I am handling are Conv2D layers. It handles the input images that will be used to identify the matrix and the picture. The next layer will be the filter matrix. This, much like the other method, will take a 3 x 3 filter across the image and find the binary pattern. The next layer will be the ReLU or the Rectified Linear Activation layer. The activation method is softmax which means the output sum up to 1 to the output can be used as a probability. From there the model will be able to make the prediction as to who it thinks the image is about.
 
@@ -102,7 +102,7 @@ The model will be able to be used when I am capturing video through a camera. Th
 Then based on how well my model was training with the data pictures the model will predict who I am and how confident it was of that decision. The purpose of this project is to be able to find the person of interest out of a group of people. So when the video does play I am looking for the output to predict who that person of interest is.
 
 With my first attempt I had a result of 50-60% confidence at time. This was not high enough to constitute a successful project. After I changed the method of which I was analyzing the images by accuracy jumped to 70 - 80% while doing video.
-![Images for Facial Recognition](images/cnn/result.png)
+![Images for Facial Recognition](/images/cnn/result.png)
 
 # Improvements and Issues
 
