@@ -110,6 +110,13 @@ The CascadeClassifier used the xml file called faarascade_frontalface_default. T
 
 The quality of the camera has another issue. Since the method is analyzing pixels it is obvious that the better the camera the higher the pixels. If I had a camera with higher pixel counts my model could have been more accurate.
 
+# Youtube
+https://youtu.be/cV28MwmKMxc
+
+# Paper
+https://github.com/SudoZyphr/facial_recognition/blob/master/Facial_regonition.pdf
+
+
 # References
 https://www.geeksforgeeks.org/image-classifier-using-cnn/
 https://towardsdatascience.com/a-simple-cnn-multi-image-classifier-31c463324fa
