@@ -1,4 +1,9 @@
-
+---
+title: "AI in Stock Market"
+date: 2020-05-29
+tags: [data science, NN, stock market, money]
+excerpt: Data Science, NN
+---
 The most fundamental motivation for trying to predict the stock market prices is financial gain. The ability to uncover a precise model that can predict the path  of the future stock prices would make the owner of the method extremely wealthy. Investors and investment firms are always searching to find a stock market model that would give them the best return on investment at the time.
 
 This project will cover the TESLA stock and I will be doing analysis against it. I have used three different methods in attempt to get the best result at guessing the open price of the next day. There is a huge market for being able to try and predict the price of stock. Many different companies are specializing and investing huge amounts of money into trying to do this action.
