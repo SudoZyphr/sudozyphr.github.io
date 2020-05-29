@@ -862,6 +862,10 @@ Instead of trying to predict the price of open or close I need to narrow my scop
 
 Volume is a great indicator of activity on a stock. If I am able to accurately figure out how volume can affect the price then I will be able to predict the increase or decrease in the near future.
 
+
+# Youtube
+https://youtu.be/fmnLeNLRLP4
+
 # References
 
 http://ai-marketers.com/ai-stock-market-forecast/
