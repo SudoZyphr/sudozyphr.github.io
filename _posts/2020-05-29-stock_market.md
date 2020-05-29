@@ -1,9 +1,9 @@
 
-The most fundamental motivation for trying to predict the stock market prices is financial gain. The ability to uncover a precise model that can predict the path  of the future stock prices would make the owner of the method extremely wealthy. Investors and investment firms are always searching to find a stock market model that would give them the best return on investment at the time. 
+The most fundamental motivation for trying to predict the stock market prices is financial gain. The ability to uncover a precise model that can predict the path  of the future stock prices would make the owner of the method extremely wealthy. Investors and investment firms are always searching to find a stock market model that would give them the best return on investment at the time.
 
-This project will cover the TESLA stock and I will be doing analysis against it. I have used three different methods in attempt to get the best result at guessing the open price of the next day. There is a huge market for being able to try and predict the price of stock. Many different companies are specializing and investing huge amounts of money into trying to do this action. 
+This project will cover the TESLA stock and I will be doing analysis against it. I have used three different methods in attempt to get the best result at guessing the open price of the next day. There is a huge market for being able to try and predict the price of stock. Many different companies are specializing and investing huge amounts of money into trying to do this action.
 
-From what I have found it is not possible to simply estimate what the stock will be weeks or months ahead. So for this project I have taken the timeline of just a day. A day might be able to be feasible in this project and will produce trackible results. 
+From what I have found it is not possible to simply estimate what the stock will be weeks or months ahead. So for this project I have taken the timeline of just a day. A day might be able to be feasible in this project and will produce trackable results.
 
 
 ```python
@@ -26,13 +26,13 @@ def pull_daily_time_series_alpha_vantage(alpha_vantage_api_key, ticker_name, out
 
 #  Data
 
-The Alpha Vatange API allows me to call in all the historical data from TESLA so that I have the necessary data to perform analysis. I have three main variables that I am looking at which are; volumne, open, close, high, and low. Since I am only running this off a MacBook Air I want to make sure that my data is able to run at in resonible timeframe so I decided to limit the amount of variables that I am using. 
+The Alpha Vatange API allows me to call in all the historical data from TESLA so that I have the necessary data to perform analysis. I have three main variables that I am looking at which are; volume, open, close, high, and low. Since I am only running this off a MacBook Air I want to make sure that my data is able to run at in resonible timeframe so I decided to limit the amount of variables that I am using.
 
 
 ```python
 def plot_data(df, x_variable, y_variable, title):
     fig, ax = plt.subplots()
-    ax.plot_date(df[x_variable], 
+    ax.plot_date(df[x_variable],
                  df[y_variable], marker='', linestyle='-', label=y_variable)
     fig.autofmt_xdate()
     plt.title(title)
@@ -41,20 +41,20 @@ def plot_data(df, x_variable, y_variable, title):
 
 
 ```python
-ts_data, ts_metadata = pull_daily_time_series_alpha_vantage(alpha_vantage_api_key, ticker_name = "TSLA", output_size = "full") 
+ts_data, ts_metadata = pull_daily_time_series_alpha_vantage(alpha_vantage_api_key, ticker_name = "TSLA", output_size = "full")
 
 ```
 
 
 ```python
-plot_data(df = ts_data, 
-          x_variable = "date_time", 
-          y_variable = "1. open", 
+plot_data(df = ts_data,
+          x_variable = "date_time",
+          y_variable = "1. open",
           title ="Open Values, Tesla Stock, Daily Data")
 ```
 
     /Users/lukegruszka/anaconda3/lib/python3.7/site-packages/pandas/plotting/_converter.py:129: FutureWarning: Using an implicitly registered datetime converter for a matplotlib plotting method. The converter was registered by pandas on import. Future versions of pandas will require you to explicitly register matplotlib converters.
-    
+
     To register the converters:
     	>>> from pandas.plotting import register_matplotlib_converters
     	>>> register_matplotlib_converters()
@@ -62,55 +62,55 @@ plot_data(df = ts_data,
 
 
 
-![png](output_7_1.png)
+![png](/images/stockmarket/output_7_1.png)
 
 
 
 ```python
-plot_data(df = ts_data, 
-          x_variable = "date_time", 
-          y_variable = "2. high", 
+plot_data(df = ts_data,
+          x_variable = "date_time",
+          y_variable = "2. high",
           title ="High Values, Tesla Stock, Daily Data")
 ```
 
 
-![png](output_8_0.png)
+![png](/images/stockmarket/output_8_0.png)
 
 
 
 ```python
-plot_data(df = ts_data, 
-          x_variable = "date_time", 
-          y_variable = "3. low", 
+plot_data(df = ts_data,
+          x_variable = "date_time",
+          y_variable = "3. low",
           title ="Low Values, Tesla Stock, Daily Data")
 ```
 
 
-![png](output_9_0.png)
+![png](/images/stockmarket/output_9_0.png)
 
 
 
 ```python
-plot_data(df = ts_data, 
-          x_variable = "date_time", 
-          y_variable = "4. close", 
+plot_data(df = ts_data,
+          x_variable = "date_time",
+          y_variable = "4. close",
           title ="Close Values, Tesla Stock, Daily Data")
 ```
 
 
-![png](output_10_0.png)
+![png](/images/stockmarket/output_10_0.png)
 
 
 
 ```python
-plot_data(df = ts_data, 
-          x_variable = "date_time", 
-          y_variable = "6. volume", 
+plot_data(df = ts_data,
+          x_variable = "date_time",
+          y_variable = "6. volume",
           title ="Volume, Tesla Stock, Daily Data")
 ```
 
 
-![png](output_11_0.png)
+![png](/images/stockmarket/output_11_0.png)
 
 
 Here I am investigating how the variables graph against time. As we can see from the graphs and then the correlations below; there are many correlations between the variables that are worth investigating before determining the algorithms and functions that I will be using below.
@@ -321,7 +321,7 @@ ts_data.describe()
 
 
 
-As we can see from the data describe above that the variables show extreme relevance towards each other except for the volume. The Volume seems to be the odd variable out that doesn't follow the trends of the other variables. 
+As we can see from the data describe above that the variables show extreme relevance towards each other except for the volume. The Volume seems to be the odd variable out that doesn't follow the trends of the other variables.
 
 # MODEL LINEAR AND VECTOR
 
@@ -330,7 +330,7 @@ As we can see from the data describe above that the variables show extreme relev
 ## Support Vector Regression (SVR)
 This is a supervised learning algorithm that analyzes data for regression analysis. It is effective in high dimensional spaces, works will with a clear margin or separation and it is great when the dimensions are greater than the number of samples that you are providing.
 
-One issue that I am anticipating is that it does not perform well with a large data set. I am using a lot of data to run analysis and I fear that this algorithm will not perform up to the standard. 
+One issue that I am anticipating is that it does not perform well with a large data set. I am using a lot of data to run analysis and I fear that this algorithm will not perform up to the standard.
 
 ## Linear Regression
 This is a linear approach to showing a relationship between a dependent variable and independent variables. This is very easy to create and run and it is a great way to predict numerical values.
@@ -403,11 +403,11 @@ df.head()
 
 
 
-I will be predicting the value for one day out into the furture. I will be focusing on the closing value to try and predict weather or not we can be confidence that the value will go up in the future or is the value will decrease in the future. 
+I will be predicting the value for one day out into the furture. I will be focusing on the closing value to try and predict weather or not we can be confidence that the value will go up in the future or is the value will decrease in the future.
 
 
 ```python
-forecast_out = 1 
+forecast_out = 1
 df['Prediction'] = df[['4. close']].shift(-forecast_out)
 print(df.tail())
 ```
@@ -421,10 +421,10 @@ print(df.tail())
     2020-05-28    805.81         NaN
 
 
-    /Users/lukegruszka/anaconda3/lib/python3.7/site-packages/ipykernel_launcher.py:4: SettingWithCopyWarning: 
+    /Users/lukegruszka/anaconda3/lib/python3.7/site-packages/ipykernel_launcher.py:4: SettingWithCopyWarning:
     A value is trying to be set on a copy of a slice from a DataFrame.
     Try using .loc[row_indexer,col_indexer] = value instead
-    
+
     See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
       after removing the cwd from sys.path.
 
@@ -464,7 +464,7 @@ x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
 
 ```python
-svr_rbf = SVR(kernel='rbf', C=1e3, gamma=0.1) 
+svr_rbf = SVR(kernel='rbf', C=1e3, gamma=0.1)
 svr_rbf.fit(x_train, y_train)
 ```
 
@@ -532,7 +532,7 @@ print(svm_prediction)
 ```
 
     [807.74776292]
-    
+
     [737.05526653]
 
 
@@ -838,8 +838,8 @@ for i in range(num_timesteps):
     prediction = model.predict(data)
     prediction = scaler.inverse_transform(prediction)
     preds.append(prediction[0][0])
-    x = np.delete(x, 0, axis=0) 
-    x = np.vstack([x, prediction]) 
+    x = np.delete(x, 0, axis=0)
+    x = np.vstack([x, prediction])
 
 print(preds)
 ```
@@ -847,15 +847,15 @@ print(preds)
     [759.7371, 1722.1831, 1363.5663, 1513.225, 1446.1702, 1474.007, 1461.2521, 1466.7164, 1464.5072, 1465.737, 1465.4946, 1465.876, 1465.9572, 1466.1364, 1466.2413, 1466.3511, 1466.4353, 1466.5107, 1466.5739, 1466.6292, 1466.6774, 1466.7201, 1466.7578, 1466.7913, 1466.8212, 1466.849, 1466.8738, 1466.897, 1466.918, 1466.9379, 1466.9553, 1466.9713, 1466.985, 1466.9971, 1467.0071, 1467.0142, 1467.0175, 1467.0168, 1467.0098, 1466.999, 1466.9852, 1466.9648, 1466.9219, 1466.837, 1466.7059, 1466.5687, 1466.4827, 1466.402, 1466.0947, 1465.3115, 1463.9476, 1463.9476, 1463.9479, 1463.948, 1463.9482, 1463.9481, 1463.9482, 1463.9481, 1463.9482, 1463.9484, 1463.9482, 1463.9482, 1463.9482, 1463.9486, 1463.9482, 1463.9486, 1463.9485, 1463.9486, 1463.9486, 1463.9486, 1463.9486, 1463.9486, 1463.9486, 1463.9486, 1463.9486, 1463.9486, 1463.9486, 1463.9486, 1463.9486, 1463.9486, 1463.9486, 1463.9486, 1463.9486, 1463.9486, 1463.9486, 1463.9487, 1463.9486, 1463.9486, 1463.9486, 1463.9486, 1463.9486, 1463.9486, 1463.9486, 1463.9486, 1463.9486, 1463.9486, 1463.9486, 1463.9486, 1463.9486, 1463.9486]
 
 
-The first number is the predicted value for the next day at 759. This is of course after looking at the rest of the data does not make sense either. The best method that I used for the data is Linear Regression. Linear regression gave me the best outcome at 807. This is the best and most probable outcome. 
+The first number is the predicted value for the next day at 759. This is of course after looking at the rest of the data does not make sense either. The best method that I used for the data is Linear Regression. Linear regression gave me the best outcome at 807. This is the best and most probable outcome.
 
 # Conclusion
 
-Linear Regression was the best algorithm used. After examinating the results there is one thing that is clear; it will not be possible to predict the price based on just these variables. Instead I have found other people who have used the news as a possible indicator. But even there you will not be able to see trends. Some papers suggest that the price has mutliple factors effecting it. But there is where I think I hav gone wrong. 
+Linear Regression was the best algorithm used. After examinating the results there is one thing that is clear; it will not be possible to predict the price based on just these variables. Instead I have found other people who have used the news as a possible indicator. But even there you will not be able to see trends. Some papers suggest that the price has mutliple factors effecting it. But there is where I think I hav gone wrong.
 
 Instead of trying to predict the price of open or close I need to narrow my scope. My scope should include if the price will go up or down. If I start at a more binary outcome it will be easier to predict. Trying to guess a number at random, as you can see from the outcomes of my algorithms, I will be predicting whether or not the price will go up or down at a given time. I will not incorporate the new but instead use volume.
 
-Volume is a great indicator of activity on a stock. If I am able to accurately figure out how volume can affect the price then I will be able to predict the increase or decrease in the near future. 
+Volume is a great indicator of activity on a stock. If I am able to accurately figure out how volume can affect the price then I will be able to predict the increase or decrease in the near future.
 
 # References
 
@@ -869,4 +869,3 @@ https://medium.com/swlh/build-an-ai-stock-trading-bot-for-free-4a46bec2a18
 https://towardsdatascience.com/getting-rich-quick-with-machine-learning-and-stock-market-predictions-696802da94fe
 https://towardsdatascience.com/just-another-ai-trying-to-predict-the-stock-market-part-1-d0663673a30e
 https://core.ac.uk/download/pdf/39667613.pdf
-
