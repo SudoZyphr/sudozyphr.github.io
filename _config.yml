@@ -16,11 +16,11 @@ minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "default", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Data Science Portfolio"
+title                    : "Luke Gruszka Portfolio"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Luke Gruszka"
-description              : "Data Science Portfolio"
+description              : "Luke Gruszka Portfolio"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -70,7 +70,7 @@ naver_site_verification  :
 
 # Social Sharing
 twitter:
-  username               :zyphrnetics
+  username               :lukegruszka
 facebook:
   username               :
   app_id                 :
@@ -95,25 +95,25 @@ analytics:
 author:
   name             : "Luke Gruszka"
   avatar           : "/images/profilepic.jpeg"
-  bio              : "Yeah I do data science sometimes"
+  bio              : "Project Manger"
   location         : "The Cloud"
-  email            : "lukegruszka@gmail.com"
+  email            : "gruszkaluke@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: mailto:zyphrnetics@gmail.com
+      url: mailto:gruszkaluke@gmail.com
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/zyphrnetics"
+      url: "https://twitter.com/lukegruszka"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/sudozyphr"
+      url: "https://github.com/lukegruszka"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
