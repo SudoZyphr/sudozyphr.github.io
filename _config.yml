@@ -96,12 +96,12 @@ author:
   name             : "Luke Gruszka"
   avatar           : "/images/profilepic.jpeg"
   bio              : "Project Manger"
-  location         : "The Cloud"
+  # location         : 
   email            : "gruszkaluke@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: mailto:gruszkaluke@gmail.com
+      # url: mailto:gruszkaluke@gmail.com
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
