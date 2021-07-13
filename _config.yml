@@ -95,8 +95,8 @@ analytics:
 author:
   name             : "Luke Gruszka"
   avatar           : "/images/profilepic.jpeg"
-  bio              : "Project Manger"
-  # location         : 
+  bio              : "Strategy Specialist"
+  # location         :
   email            : "gruszkaluke@gmail.com"
   links:
     - label: "Email"
